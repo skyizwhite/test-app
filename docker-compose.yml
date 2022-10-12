@@ -7,4 +7,4 @@ services:
     ports:
       - "3000:3000"
     tty: true
-    entrypoint: qlot exec ./.qlot/bin/clackup --address 0.0.0.0 --port 3000 app.lisp
+    entrypoint: qlot exec clackup --address 0.0.0.0 --port 3000 app.lisp
