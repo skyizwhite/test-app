@@ -1,9 +1,9 @@
-FROM fukamachi/sbcl:2.2.3
+FROM fukamachi/qlot:latest
 
 WORKDIR /app
 COPY . /app
 
 RUN apt-get update && apt-get install libev4
-RUN ros install qlot && qlot install
+RUN qlot install
 
 ENV PATH $PATH:/app/.qlot/bin
