@@ -11,6 +11,7 @@ services:
       - .:/app
       - qlot:/app/.qlot
     ports:
+      - "4005:4005"
       - "3000:3000"
     tty: true
-    entrypoint: qlot exec clackup --server woo --address 0.0.0.0 --port 3000 app.lisp
+    entrypoint: qlot exec clackup --server woo --address 0.0.0.0 --port 3000 --swank-interface 0.0.0.0 --swank-port 4005 app.lisp
