@@ -1,10 +1,16 @@
 version: '3'
+
+volumes:
+  qlot:
+
 services:
   app:
-    build:
-      context: .
-      dockerfile: ./Dockerfile
+    container_name: app
+    build: .
+    volumes:
+      - .:/app
+      - qlot:/app/.qlot
     ports:
       - "3000:3000"
     tty: true
-    entrypoint: qlot exec clackup --address 0.0.0.0 --port 3000 app.lisp
+    entrypoint: qlot exec clackup --server woo --address 0.0.0.0 --port 3000 app.lisp
