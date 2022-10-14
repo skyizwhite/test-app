@@ -1,9 +1,15 @@
 version: '3'
+
+volumes:
+  qlot:
+
 services:
   app:
-    build:
-      context: .
-      dockerfile: ./Dockerfile
+    container_name: app
+    build: .
+    volumes:
+      - .:/app
+      - qlot:/app/.qlot
     ports:
       - "3000:3000"
     tty: true
