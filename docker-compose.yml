@@ -14,4 +14,4 @@ services:
       - "4005:4005"
       - "3000:3000"
     tty: true
-    entrypoint: qlot exec clackup -s utopian --server woo --address 0.0.0.0 --port 3000 --swank-interface 0.0.0.0 --swank-port 4005 app.lisp
+    entrypoint: qlot exec clackup -s test-app --server woo --address 0.0.0.0 --port 3000 --swank-interface 0.0.0.0 --swank-port 4005 app.lisp
