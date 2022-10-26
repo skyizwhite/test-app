@@ -6,3 +6,7 @@
  (:class qlot/source/ql:source-ql
   :initargs (:%version :latest)
   :version "ql-2022-07-08"))
+("utopian" .
+ (:class qlot/source/github:source-github
+  :initargs (:repos "fukamachi/utopian" :ref nil :branch nil :tag nil)
+  :version "github-c6ad73d5a9bba245ad7b747e7764c94e3ea0ba23"))
