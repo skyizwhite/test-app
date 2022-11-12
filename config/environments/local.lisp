@@ -4,6 +4,8 @@
 
 `(:databases
   ((:maindb . (:postgres
+               :host "db"
+               :port 5432
                :database-name "test-app"
-               :username "test-app"
-               :password ""))))
+               :username "root"
+               :password "password"))))
