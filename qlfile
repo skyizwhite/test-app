@@ -1,3 +1,4 @@
-ql clack
-github utopian fukamachi/utopian
+ql clack :latest
+git utopian https://github.com/fukamachi/utopian
 ql assoc-utils
+ql mito

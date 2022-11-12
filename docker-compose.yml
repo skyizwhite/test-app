@@ -2,8 +2,20 @@ version: '3'
 
 volumes:
   qlot:
+  db:
 
 services:
+  db:
+    container_name: postgres
+    image: postgres:15.1
+    ports:
+      - 5432:5432
+    volumes:
+      - db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=password
+
   app:
     container_name: app
     build: .
@@ -13,5 +25,8 @@ services:
     ports:
       - "4005:4005"
       - "3000:3000"
+    links:
+      - db
     tty: true
+    stdin_open: true
     entrypoint: qlot exec clackup -s test-app --server woo --address 0.0.0.0 --port 3000 --swank-interface 0.0.0.0 --swank-port 4005 app.lisp
