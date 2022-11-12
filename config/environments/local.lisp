@@ -1,6 +1,6 @@
-(defpackage #:test-app/config/environments/local
-  (:use #:cl))
-(in-package #:test-app/config/environments/local)
+(defpackage :test-app/config/environments/local
+  (:use :cl))
+(in-package :test-app/config/environments/local)
 
 `(:databases
   ((:maindb . (:postgres
