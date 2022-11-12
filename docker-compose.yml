@@ -2,8 +2,20 @@ version: '3'
 
 volumes:
   qlot:
+  database:
 
 services:
+  database:
+    container_name: postgres
+    image: postgres:15.1
+    ports:
+      - 5432:5432
+    volumes:
+      - database:/var/lib/postgres/data
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=password
+    
   app:
     container_name: app
     build: .
