@@ -1,5 +1,8 @@
 (defpackage :test-app/app
-  (:use :cl :utopian)
+  (:use :cl)
+  (:import-from :utopian
+                :defroutes
+                :defapp)
   (:import-from :assoc-utils
                 :aget))
 (in-package :test-app/app)
