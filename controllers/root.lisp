@@ -1,10 +1,9 @@
 (defpackage #:test-app/controllers/root
   (:use #:cl
-        #:utopian
-        #:test-app/views/root)
+        #:utopian)
   (:export #:index))
 (in-package #:test-app/controllers/root)
 
 (defun index (params)
   (declare (ignore params))
-  (render 'index-page))
+  (format t "~a" params))
