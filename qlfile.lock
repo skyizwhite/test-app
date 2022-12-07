@@ -18,3 +18,11 @@
  (:class qlot/source/ql:source-ql
   :initargs (:%version :latest)
   :version "ql-2022-11-07"))
+("jzon" .
+ (:class qlot/source/git:source-git
+  :initargs (:remote-url "https://github.com/Zulu-Inuoe/jzon")
+  :version "git-ba43faa1f2a07e83226d0e52b29cf6a816e3596d"))
+("dexador" .
+ (:class qlot/source/ql:source-ql
+  :initargs (:%version :latest)
+  :version "ql-2022-11-07"))
